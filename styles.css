@@ -1,0 +1,34 @@
+﻿.page-content {
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+.page-content > div[ui-view] > .item-container {
+    margin: 10px 0 10px 0;
+    border: 1px solid lightgrey;
+    padding: 10px 0 10px 0;
+}
+
+.page-content > div[ui-view] > .item-container:hover {
+    box-shadow: 0.1px 0.1px 0.1px 0.1px rgba(0,0,0,0.4);
+}
+
+.page-content > div[ui-view] > .item-container > .image-container {
+}
+
+.page-content > div[ui-view] > .item-container > .image-container > img {
+    max-height: 100px;
+    max-width: 120px;
+}
+
+.page-content > div[ui-view] > .item-container > .text-container > .title {
+}
+
+.page-content > div[ui-view] > .item-container > .text-container > .title > a {
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.page-content > div[ui-view] > .item-container > .text-container > .short-info {
+}

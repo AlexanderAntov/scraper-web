@@ -1,0 +1,9 @@
+{
+  "name": "scraper-web",
+  "devDependencies": {
+    "angular": "^1.6.1",
+	"angular-ui-router": "^0.3.2",
+	"bootstrap": "^3.3.7",
+	"highcharts": "^5.0.7"
+  }
+}

@@ -11,7 +11,7 @@
             cloudsPercentageList = [],
             windSpeedList = [];
 
-        $http.get('http://api.openweathermap.org/data/2.5/forecast/daily?q=Sofia&units=metric&mode=json&cnt=16&appid=3926e2f2b733fae5a684cea17116fbc8').then(function (response) {
+        $http.get('https://scraper-api.herokuapp.com/weather-raw').then(function (response) {
             var currentDate = new Date();
             response.data.list.forEach(function (weatherDataItem) {
                 datesList.push(currentDate.toDateString().slice(0, -5));

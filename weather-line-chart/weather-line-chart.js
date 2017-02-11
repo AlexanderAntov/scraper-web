@@ -13,7 +13,7 @@
 
         $http.get('https://scraper-api.herokuapp.com/weather-raw').then(function (response) {
             var currentDate = new Date();
-            response.data.list.forEach(function (weatherDataItem) {
+            response.data.list.slice(0, -1).forEach(function (weatherDataItem) {
                 datesList.push(currentDate.toDateString().slice(0, -5));
                 minValuesList.push(weatherDataItem.temp.min);
                 maxValuesList.push(weatherDataItem.temp.max);

@@ -1,12 +1,12 @@
-﻿<div class="col-xs-12 item-container" ng-repeat="item in ::newsList">
-    <div ng-if="::item.image" class="col-xs-1 pull-left image-container">
+﻿<div class="item-container" ng-repeat="item in ::newsList">
+    <div ng-if="::item.image" class="col-xs-12 pull-left image-container">
         <img ng-src="{{ ::item.image }}" />
     </div>
-    <div class="col-xs-11 pull-left text-container">
-        <div class="col-xs-12 title">
+    <div class="col-xs-12 pull-left text-container">
+        <div class="title">
             <a ng-bind="::item.title" ng-href="::item.link"></a>
         </div>
-        <div class="col-xs-12 short-info">
+        <div class="short-info">
             <p ng-bind="::item.shortInfo"></p>
         </div>
     </div>

@@ -1,12 +1,31 @@
-﻿.page-content {
+﻿.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #08a559;
+    padding-top: 5px;
+}
+
+.header > .app-title {
+    color: white;
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.page-content {
     overflow-x: hidden;
     padding: 10px;
+    margin-top: 50px;
 }
 
 .page-content > div[ui-view] > .item-container {
-    margin: 10px 0 10px 0;
+    float: left;
+    margin: 10px;
     border: 1px solid lightgrey;
     padding: 10px 0 10px 0;
+    height: 300px;
+    width: 23.8%;
 }
 
 .page-content > div[ui-view] > .item-container:hover {
@@ -14,14 +33,17 @@
 }
 
 .page-content > div[ui-view] > .item-container > .image-container {
+    margin-bottom: 20px;
 }
 
 .page-content > div[ui-view] > .item-container > .image-container > img {
     max-height: 100px;
-    max-width: 120px;
+    max-width: 200px;
+    margin-left: 25%;
 }
 
 .page-content > div[ui-view] > .item-container > .text-container > .title {
+    margin-bottom: 20px;
 }
 
 .page-content > div[ui-view] > .item-container > .text-container > .title > a {
@@ -31,4 +53,25 @@
 }
 
 .page-content > div[ui-view] > .item-container > .text-container > .short-info {
+}
+
+.page-content > div[ui-view] > .item-container > .text-container > .short-info > p {
+}
+
+@media (max-width: 1750px) {
+    .page-content > div[ui-view] > .item-container {
+        width: 30%;
+    }
+}
+
+@media (max-width: 900px) {
+    .page-content > div[ui-view] > .item-container {
+        width: 40%;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-content > div[ui-view] > .item-container {
+        width: 100%;
+    }
 }

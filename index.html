@@ -6,15 +6,18 @@
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="styles.css" rel="stylesheet" />
 </head>
-<body ng-app="app">
-    <div class="page-content">
-        <div ui-view></div>
-    </div>
-    <script src="node_modules/angular/angular.min.js"></script>
-    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="node_modules/highcharts/highcharts.js"></script>
-    <script src="index.js"></script>
-    <script src="news-list/news-list.js"></script>
-    <script src="weather-line-chart/weather-line-chart.js"></script>
-</body>
+    <body ng-app="app">
+        <div class="header">
+            <span class="app-title">Scraper</span>
+        </div>
+        <div class="page-content">
+            <div ui-view></div>
+        </div>
+        <script src="node_modules/angular/angular.min.js"></script>
+        <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="node_modules/highcharts/highcharts.js"></script>
+        <script src="app.js"></script>
+        <script src="news-list/news-list.js"></script>
+        <script src="weather-line-chart/weather-line-chart.js"></script>
+    </body>
 </html>

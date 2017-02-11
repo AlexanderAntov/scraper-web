@@ -90,7 +90,7 @@
                 series: [
                     {
                         name: 'clouds %',
-                        color: '#bab22a',
+                        color: '#0e2e60',
                         data: cloudsPercentageList
                     }
                 ]
@@ -125,7 +125,7 @@
                 series: [
                     {
                         name: 'wind speed',
-                        color: '#2d7f37',
+                        color: '#c7b1cc',
                         data: windSpeedList
                     }
                 ]

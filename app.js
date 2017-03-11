@@ -18,7 +18,7 @@
                 controller: 'newsListCtrl',
                 templateUrl: 'news-list/news-list.html'
             })
-            .state('chartsWeatherLine', {
+            .state('chartsWeatherLine?city', {
                 url: '/weather-line-chart',
                 controller: 'weatherLineChartCtrl',
                 templateUrl: 'weather-line-chart/weather-line-chart.html'

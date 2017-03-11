@@ -4,14 +4,21 @@
     angular.module('app.weatherLineChart', [])
         .controller('weatherLineChartCtrl', WeatherLineChartCtrl);
 
-    function WeatherLineChartCtrl($http) {
+    function WeatherLineChartCtrl($http, $stateParams) {
         var datesList = [],
             minValuesList = [],
             maxValuesList = [],
             cloudsPercentageList = [],
-            windSpeedList = [];
+            windSpeedList = [],
+            apiUrl;
 
-        $http.get('https://scraper-api.herokuapp.com/weather-raw').then(function (response) {
+        if ($stateParams.city) {
+            apiUrl = 'https://scraper-api.herokuapp.com/weather-raw?city=' + $stateParams.city;
+        } else {
+            apiUrl = 'https://scraper-api.herokuapp.com/weather-raw';
+        }
+
+        $http.get(apiUrl).then(function (response) {
             var currentDate = new Date();
             response.data.list.slice(0, -1).forEach(function (weatherDataItem) {
                 datesList.push(currentDate.toDateString().slice(0, -5));

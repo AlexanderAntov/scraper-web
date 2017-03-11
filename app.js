@@ -18,8 +18,8 @@
                 controller: 'newsListCtrl',
                 templateUrl: 'news-list/news-list.html'
             })
-            .state('chartsWeatherLine?city', {
-                url: '/weather-line-chart',
+            .state('chartsWeatherLine', {
+                url: '/weather-line-chart?city',
                 controller: 'weatherLineChartCtrl',
                 templateUrl: 'weather-line-chart/weather-line-chart.html'
             });

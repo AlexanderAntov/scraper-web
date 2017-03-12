@@ -34,7 +34,7 @@
         });
 
         function initSynchronizedHighlight() {
-            document.getElementById('container').addEventListener('mousemove', function (e) {
+            document.getElementById('container').addEventListener('click', function (e) {
                 var chart,
                     point,
                     i,

@@ -1,4 +1,12 @@
-﻿<div class="item-container" ng-repeat="item in ::newsList">
+﻿<div class="search-header-container">
+    <div ng-if="searchInputVisible" class="search-input-container">
+        <input type="text" ng-model="searchValue" ng-change="onSearchValueChange(searchValue)" />
+    </div>
+    <div class="search-icon-container" ng-click="searchInputVisible = !searchInputVisible">
+        <img src="news-list/search.png" height="20px" width="20px" />
+    </div>
+</div>
+<div class="item-container" ng-repeat="item in newsList">
     <div ng-if="::item.image" class="col-xs-12 pull-left image-container">
         <img ng-src="{{ ::item.image }}" />
     </div>

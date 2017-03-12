@@ -79,3 +79,35 @@
         width: 100%;
     }
 }
+
+.page-content > div[ui-view] > .search-header-container {
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+
+.page-content > div[ui-view] > .search-header-container {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 300px;
+}
+
+.page-content > div[ui-view] > .search-header-container > .search-input-container {
+}
+
+.page-content > div[ui-view] > .search-header-container > .search-input-container > input {
+    width: 230px;
+}
+
+.page-content > div[ui-view] > .search-header-container > .search-icon-container {
+    width: 30px;
+    float: right;
+    position: absolute;
+    right: 15px;
+    top: 0px;
+}
+
+.page-content > div[ui-view] > .search-header-container > .search-icon-container > img {
+    cursor: pointer;
+}

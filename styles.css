@@ -58,7 +58,7 @@
 .page-content > div[ui-view] > .item-container > .text-container > .short-info > p {
 }
 
-.page-content > div[ui-view] > .item-container:first-of-type > .text-container > .short-info > p {
+.page-content > div[ui-view] > div:nth-of-type(2) > .text-container > .short-info > p {
     white-space: pre;
 }
 
@@ -89,7 +89,7 @@
 .page-content > div[ui-view] > .search-header-container {
     position: absolute;
     right: 15px;
-    top: 15px;
+    top: 10px;
     width: 300px;
 }
 
@@ -98,6 +98,7 @@
 
 .page-content > div[ui-view] > .search-header-container > .search-input-container > input {
     width: 230px;
+    height: 32px;
 }
 
 .page-content > div[ui-view] > .search-header-container > .search-icon-container {
@@ -105,7 +106,7 @@
     float: right;
     position: absolute;
     right: 15px;
-    top: 0px;
+    top: 5px;
 }
 
 .page-content > div[ui-view] > .search-header-container > .search-icon-container > img {

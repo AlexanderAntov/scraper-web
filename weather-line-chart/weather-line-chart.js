@@ -29,6 +29,40 @@
                 currentDate.setDate(currentDate.getDate() + 1);
             });
 
+            initSynchronizedHighlight();
+            initChartsData();
+        });
+
+        function initSynchronizedHighlight() {
+            document.getElementById('container').addEventListener('mousemove', function (e) {
+                var chart,
+                    point,
+                    i,
+                    event;
+
+                for (i = 0; i < Highcharts.charts.length; i = i + 1) {
+                    chart = Highcharts.charts[i];
+                    event = chart.pointer.normalize(e.originalEvent);
+                    point = chart.series[0].searchPoint(event, true);
+
+                    if (point) {
+                        point.highlight(e);
+                    }
+                }
+            });
+
+            Highcharts.Pointer.prototype.reset = function () {
+                return undefined;
+            };
+
+            Highcharts.Point.prototype.highlight = function (event) {
+                this.onMouseOver();
+                this.series.chart.tooltip.refresh(this);
+                this.series.chart.xAxis[0].drawCrosshair(event, this);
+            };
+        }
+
+        function initChartsData() {
             Highcharts.chart('temperature-chart-container', {
                 title: {
                     text: 'Temperature',
@@ -137,6 +171,6 @@
                     }
                 ]
             });
-        });
+        }
     }
 })();

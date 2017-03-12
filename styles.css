@@ -58,6 +58,10 @@
 .page-content > div[ui-view] > .item-container > .text-container > .short-info > p {
 }
 
+.page-content > div[ui-view] > .item-container:first-of-type > .text-container > .short-info > p {
+    white-space: pre;
+}
+
 @media (max-width: 1750px) {
     .page-content > div[ui-view] > .item-container {
         width: 30%;

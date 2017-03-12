@@ -91,10 +91,12 @@
                 },
                 series: [
                     {
+                        type: 'line',
                         name: 'max temp',
                         color: '#f96443',
                         data: maxValuesList
                     }, {
+                        type: 'line',
                         name: 'min temp',
                         color: '#43ccf9',
                         data: minValuesList
@@ -130,6 +132,7 @@
                 },
                 series: [
                     {
+                        type: 'line',
                         name: 'clouds %',
                         color: '#0e2e60',
                         data: cloudsPercentageList
@@ -165,6 +168,7 @@
                 },
                 series: [
                     {
+                        type: 'line',
                         name: 'wind speed',
                         color: '#c7b1cc',
                         data: windSpeedList

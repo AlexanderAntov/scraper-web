@@ -18,6 +18,7 @@
         function cleanSearchValue(value) {
             if (!value) {
                 $scope.searchValue = '';
+                $scope.newsList = $scope.pristineNewsList;
             }
         }
 

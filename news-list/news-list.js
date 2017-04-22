@@ -14,7 +14,7 @@
                     if (index === 0) {
                         newsModel.info = newsModel.info.replace(/\n/g, '<br/>');
                     }
-                    newsModel.info = $sce.trustAsHtml(newsModel.info);
+                    newsModel.infoHtml = $sce.trustAsHtml(newsModel.info);
                 });
                 $scope.newsList = response.data;
                 $scope.pristineNewsList = response.data;

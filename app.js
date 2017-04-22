@@ -26,6 +26,13 @@
     })
     .controller('appCtrl', AppCtrl);
 
-    function AppCtrl() {
+    function AppCtrl($state) {
+        var that = this;
+
+        that.goToIndex = goToIndex;
+
+        function goToIndex() {
+            $state.go('newsList');
+        }
     }
 })();

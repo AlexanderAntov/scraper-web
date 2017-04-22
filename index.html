@@ -6,9 +6,9 @@
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="styles.css" rel="stylesheet" />
 </head>
-    <body ng-app="app">
+    <body ng-app="app" ng-controller="appCtrl as app">
         <div class="header">
-            <span class="app-title">Scraper</span>
+            <span ng-click="app.goToIndex()" class="app-title">Scraper</span>
         </div>
         <div class="page-content">
             <div ui-view></div>

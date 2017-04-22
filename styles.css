@@ -33,6 +33,7 @@
     height: 300px;
     width: 23.8%;
     background-color: white;
+    padding-right: 1px;
 }
 
 .page-content > div[ui-view] > .item-container:hover {
@@ -47,6 +48,9 @@
     max-height: 100px;
     max-width: 200px;
     margin-left: 25%;
+}
+
+.page-content > div[ui-view] > .item-container > .text-container {
 }
 
 .page-content > div[ui-view] > .item-container > .text-container > .title {
@@ -70,6 +74,8 @@
     position: absolute;
     margin-top: 263px;
     padding-left: 10px;
+    margin-right: 10px;
+    border-top: 1px solid #e8e8e8;
 }
 
 .page-content > div[ui-view] > .item-container > .item-footer > .date-container {
@@ -85,17 +91,29 @@
     .page-content > div[ui-view] > .item-container {
         width: 30%;
     }
+
+    .page-content > div[ui-view] > .item-container > .item-footer {
+        width: calc(30% - 8px);
+    }
 }
 
 @media (max-width: 900px) {
     .page-content > div[ui-view] > .item-container {
         width: 40%;
     }
+
+    .page-content > div[ui-view] > .item-container > .item-footer {
+        width: calc(40% - 10px);
+    }
 }
 
 @media (max-width: 600px) {
     .page-content > div[ui-view] > .item-container {
         width: 100%;
+    }
+
+    .page-content > div[ui-view] > .item-container > .item-footer {
+        width: calc(100% - 10px);
     }
 }
 

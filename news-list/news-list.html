@@ -15,7 +15,7 @@
             <a ng-bind="::item.title" ng-href="{{ ::item.url }}"></a>
         </div>
         <div class="short-info">
-            <p ng-bind="::item.info"></p>
+            <p ng-bind-html="::item.info"></p>
         </div>
     </div>
     <div class="col-xs-12 item-footer">

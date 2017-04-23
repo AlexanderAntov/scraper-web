@@ -96,6 +96,44 @@
     font-size: 12px;
 }
 
+.page-content > div[ui-view] > .home-container {
+    margin-top: -9px;
+}
+
+.page-content > div[ui-view] > .home-container > .navigation-row {
+    height: 100px;
+    border-bottom: 1px solid white;
+    padding-left: 25px;
+    -webkit-transition: width 0.5s, opacity 0.5s;
+    -moz-transition: width 0.5s, opacity 0.5s;
+    transition: width 0.5s, opacity 0.5s;
+    width: 105%;
+    opacity: 1;
+}
+
+.page-content > div[ui-view] > .home-container > .navigation-row:hover {
+    width: 90%;
+    opacity: 0.7;
+}
+
+.page-content > div[ui-view] > .home-container > .navigation-row > .navigation-item {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    height: 100%;
+    width: 30%;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.page-content > div[ui-view] > .home-container > .navigation-row.news-list {
+    background-color: #B89C91;
+}
+
+.page-content > div[ui-view] > .home-container > .navigation-row.weather-charts {
+    background-color: #067E8D;
+}
+
 @media (max-width: 1750px) {
     .page-content > div[ui-view] > .item-container {
         width: 30%;

@@ -3,10 +3,12 @@
 
     angular.module('app', [
         'ui.router',
+        'app.home',
         'app.newsList',
         'app.weatherLineChart'
     ])
-    .config(function ($stateProvider) {
+    .config(function ($qProvider, $stateProvider) {
+        $qProvider.errorOnUnhandledRejections(false);
         $stateProvider
             .state('app', {
                 url: '/',
@@ -34,16 +36,16 @@
     function AppCtrl($state) {
         var that = this;
 
-        that.goToIndex = goToIndex;
+        that.goToHome = goToHome;
 
         init();
 
         function init() {
-            $state.go('newsList');
+            goToHome();
         }
 
-        function goToIndex() {
-            $state.go('newsList');
+        function goToHome() {
+            $state.go('home');
         }
     }
 })();

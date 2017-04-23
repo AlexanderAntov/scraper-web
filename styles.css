@@ -88,6 +88,14 @@
     font-weight: bold;
 }
 
+.page-content > div[ui-view] > .item-container > .item-footer > .provider-container {
+    float: right;
+}
+
+.page-content > div[ui-view] > .item-container > .item-footer > .provider-container > span {
+    font-size: 11px;
+}
+
 @media (max-width: 1750px) {
     .page-content > div[ui-view] > .item-container {
         width: 30%;

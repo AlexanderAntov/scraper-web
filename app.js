@@ -9,9 +9,14 @@
     .config(function ($stateProvider) {
         $stateProvider
             .state('app', {
-                url: '/home',
+                url: '/',
                 controller: 'appCtrl',
                 templateUrl: 'index.html'
+            })
+            .state('home', {
+                url: '/home',
+                controller: 'homeCtrl',
+                templateUrl: 'home/home.html'
             })
             .state('newsList', {
                 url: '/news-list',
@@ -30,6 +35,12 @@
         var that = this;
 
         that.goToIndex = goToIndex;
+
+        init();
+
+        function init() {
+            $state.go('newsList');
+        }
 
         function goToIndex() {
             $state.go('newsList');

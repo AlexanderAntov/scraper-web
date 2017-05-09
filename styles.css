@@ -134,14 +134,12 @@
     background-color: #067E8D;
 }
 
-@media (max-width: 1750px) {
-    .page-content > div[ui-view] > .item-container {
-        width: 30%;
-    }
+.page-content > div[ui-view] > .item-container {
+    width: 30%;
+}
 
-    .page-content > div[ui-view] > .item-container > .item-footer {
-        width: calc(30% - 8px);
-    }
+.page-content > div[ui-view] > .item-container > .item-footer {
+    width: calc(30% - 8px);
 }
 
 @media (max-width: 900px) {

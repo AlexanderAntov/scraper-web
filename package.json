@@ -1,7 +1,7 @@
 {
   "name": "scraper-web",
   "scripts": {
-    "start": "node server.js"
+    "start": "lessc --clean-css styles.less styles.min.css && node server.js"
   },
   "main": "server.js",
   "engines": {
@@ -9,9 +9,11 @@
   },
   "dependencies": {
     "angular": "^1.6.1",
-	"angular-ui-router": "^0.3.2",
-	"bootstrap": "^3.3.7",
-	"highcharts": "^5.0.7",
-	"express": "^4.14.0"
+    "angular-ui-router": "^0.3.2",
+    "bootstrap": "^3.3.7",
+    "highcharts": "^5.0.7",
+    "express": "^4.14.0",
+    "less": "^2.7.2",
+    "less-plugin-clean-css": "^1.5.1"
   }
 }

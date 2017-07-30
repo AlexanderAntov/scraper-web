@@ -134,7 +134,17 @@
     background-color: #067E8D;
 }
 
-@media (max-width: 1750px) {
+@media screen and (min-device-width: 1750px) {
+    .page-content > div[ui-view] > .item-container {
+        width: 20%;
+    }
+
+    .page-content > div[ui-view] > .item-container > .item-footer {
+        width: calc(20% - 5px);
+    }
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1750px) {
     .page-content > div[ui-view] > .item-container {
         width: 30%;
     }
@@ -144,7 +154,7 @@
     }
 }
 
-@media (max-width: 900px) {
+@media screen and (min-device-width: 900px) and (max-device-width: 1200px) {
     .page-content > div[ui-view] > .item-container {
         width: 40%;
     }
@@ -154,7 +164,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media screen and (min-device-width: 600px) and (max-device-width: 900px) {
     .page-content > div[ui-view] > .item-container {
         width: 100%;
     }

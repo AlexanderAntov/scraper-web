@@ -8,13 +8,13 @@
     "node": "6.x"
   },
   "dependencies": {
-    "angular": "^1.6.1",
-    "angular-ui-router": "^0.3.2",
-    "bootstrap": "^3.3.7",
-    "highcharts": "^5.0.7",
-    "express": "^4.14.0",
-    "less": "^2.7.2",
-    "less-plugin-clean-css": "^1.5.1",
-    "node-minify": "^2.3.0"
+    "angular": "1.6.1",
+    "angular-ui-router": "0.3.2",
+    "bootstrap": "3.3.7",
+    "highcharts": "5.0.7",
+    "express": "4.14.0",
+    "less": "2.7.2",
+    "less-plugin-clean-css": "1.5.1",
+    "node-minify": "2.3.0"
   }
 }

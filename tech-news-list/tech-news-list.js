@@ -8,7 +8,7 @@
         $scope.onSearchValueChange = onSearchValueChange;
         $scope.$watch('searchInputVisible', cleanSearchValue);
 
-        $http.get('https://scraper-api.herokuapp.com/tech-and-science').then(function (response) {
+        $http.get('https://scraper-api.herokuapp.com/tech-and-science?images="true"').then(function (response) {
             if (response && response.data && response.data.length > 0) {
                 response.data.forEach(function (newsModel, index) {
                     newsModel.infoHtml = $sce.trustAsHtml(newsModel.info);

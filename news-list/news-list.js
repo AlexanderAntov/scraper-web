@@ -11,7 +11,7 @@
         $http.get('https://scraper-api.herokuapp.com/news?images="true"').then(function (response) {
             if (response && response.data && response.data.length > 0) {
                 response.data.forEach(function (newsModel, index) {
-                    if (index === 0) {
+                    if (index === 0 || index === 1) {
                         newsModel.info = newsModel.info.replace(/\n/g, '<br/>');
                     }
                     newsModel.infoHtml = $sce.trustAsHtml(newsModel.info);

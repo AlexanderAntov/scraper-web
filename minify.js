@@ -6,6 +6,7 @@ require('node-minify').minify({
       'tech-news-list/tech-news-list.js',
       'weather-line-chart/weather-line-chart.js',
       'keywords-bar-chart/keywords-bar-chart.js',
+      'app.const.js',
       'app.js'
   ],
   output: 'index.min.js',

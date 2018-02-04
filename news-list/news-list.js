@@ -4,11 +4,11 @@
     angular.module('app.newsList', [])
         .controller('newsListCtrl', NewsListCtrl);
 
-    function NewsListCtrl($http, $scope, $sce) {
+    function NewsListCtrl($http, $scope, $sce, appConst) {
         $scope.onSearchValueChange = onSearchValueChange;
         $scope.$watch('searchInputVisible', cleanSearchValue);
 
-        $http.get('https://scraper-api.herokuapp.com/news?images="true"').then(function (response) {
+        $http.get('{0}/news?images="true"'.replace('{0}', appConst.backendUrl)).then(function (response) {
             if (response && response.data && response.data.length > 0) {
                 response.data.forEach(function (newsModel, index) {
                     if (index === 0 || index === 1) {

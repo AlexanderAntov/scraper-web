@@ -4,8 +4,8 @@
     angular.module('app.keywordsBarChart', [])
         .controller('keywordsBarChartCtrl', KeywordsBarChartCtrl);
 
-    function KeywordsBarChartCtrl($http) {
-        $http.get('https://scraper-api.herokuapp.com/news-keywords').then(function (response) {
+    function KeywordsBarChartCtrl($http, appConst) {
+        $http.get('{0}/news-keywords'.replace('{0}', appConst.backendUrl)).then(function (response) {
             var keywordData = [];
             response.data.slice(0, 50).forEach(function (model) {
                 keywordData.push([model.word, model.score]);

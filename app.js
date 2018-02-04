@@ -3,6 +3,7 @@
 
     angular.module('app', [
         'ui.router',
+        'app.const',
         'app.home',
         'app.newsList',
         'app.techNewsList',

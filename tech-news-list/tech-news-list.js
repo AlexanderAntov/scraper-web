@@ -4,11 +4,11 @@
     angular.module('app.techNewsList', [])
         .controller('techNewsListCtrl', TechNewsListCtrl);
 
-    function TechNewsListCtrl($http, $scope, $sce) {
+    function TechNewsListCtrl($http, $scope, $sce, appConst) {
         $scope.onSearchValueChange = onSearchValueChange;
         $scope.$watch('searchInputVisible', cleanSearchValue);
 
-        $http.get('https://scraper-api.herokuapp.com/tech-and-science?images="true"').then(function (response) {
+        $http.get('{0}/tech-and-science?images="true"'.replace('{0}', appConst.backendUrl)).then(function (response) {
             if (response && response.data && response.data.length > 0) {
                 response.data.forEach(function (newsModel, index) {
                     newsModel.infoHtml = $sce.trustAsHtml(newsModel.info);

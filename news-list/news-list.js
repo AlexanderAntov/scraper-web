@@ -6,6 +6,7 @@
 
     function NewsListCtrl($http, $scope, $sce, appConst) {
         $scope.onSearchValueChange = onSearchValueChange;
+        $scope.summarize = summarize;
         $scope.$watch('searchInputVisible', cleanSearchValue);
 
         $http.get('{0}/news?images="true"'.replace('{0}', appConst.backendUrl)).then(function (response) {
@@ -20,6 +21,12 @@
                 $scope.pristineNewsList = response.data;
             }
         });
+
+        function summarize(model) {
+            window.open('{0}/scrape/{1}'
+                .replace('{0}', appConst.backendUrl)
+                .replace('{1}', model.id));
+        }
 
         function cleanSearchValue(value) {
             if (!value) {

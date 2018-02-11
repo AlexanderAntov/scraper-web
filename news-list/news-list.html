@@ -7,7 +7,12 @@
     </div>
 </div>
 <div class="item-container" ng-repeat="item in newsList">
-    <div ng-if="::item.image" class="col-xs-12 pull-left image-container">
+    <div ng-if="::(item.provider === 4 || item.provider === 6)" 
+         ng-click="summarize(item)" 
+         class="summarize-action">
+            <img src="filter.png" height="17px" width="17px" />
+    </div>
+    <div ng-if="::item.image" class="pull-left image-container">
         <img ng-src="{{ ::item.image }}" />
     </div>
     <div class="col-xs-12 pull-left text-container">

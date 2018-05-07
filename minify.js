@@ -6,8 +6,8 @@ require('node-minify').minify({
       'news-lists/main/main-news-list.js',
       'news-lists/tech/tech-news-list.js',
       'news-lists/programming/programming-news-list.js',
-      'weather-line-chart/weather-line-chart.js',
-      'keywords-bar-chart/keywords-bar-chart.js',
+      'charts/weather/weather-line-chart.js',
+      'charts/keywords/keywords-bar-chart.js',
       'app.const.js',
       'app.js'
   ],

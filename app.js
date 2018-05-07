@@ -42,12 +42,12 @@
             .state('chartsWeatherLine', {
                 url: '/weather-line-chart?city',
                 controller: 'weatherLineChartCtrl',
-                templateUrl: 'weather-line-chart/weather-line-chart.html'
+                templateUrl: 'charts/weather/weather-line-chart.html'
             })
             .state('chartsKeywordsBar', {
                 url: '/keywords-bar-chart',
                 controller: 'keywordsBarChartCtrl',
-                templateUrl: 'keywords-bar-chart/keywords-bar-chart.html'
+                templateUrl: 'charts/keywords/keywords-bar-chart.html'
             });
     })
     .controller('appCtrl', AppCtrl);

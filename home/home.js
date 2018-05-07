@@ -7,6 +7,7 @@
     function HomeCtrl($scope, $state) {
         $scope.goToNewsList = goToNewsList;
         $scope.goToTechNewsList = goToTechNewsList;
+        $scope.goToProgrammingNewsList = goToProgrammingNewsList;
         $scope.goToWeatherCharts = goToWeatherCharts;
         $scope.goToKeywordsCharts = goToKeywordsCharts;
 
@@ -16,6 +17,10 @@
 
         function goToTechNewsList() {
             $state.go('techNewsList');
+        }
+
+        function goToProgrammingNewsList() {
+            $state.go('programmingNewsList');
         }
 
         function goToWeatherCharts() {

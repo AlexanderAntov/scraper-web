@@ -1,0 +1,29 @@
+﻿<div class="search-header-container">
+    <div ng-if="searchInputVisible" class="search-input-container">
+        <input type="text" ng-model="searchValue" ng-change="onSearchValueChange(searchValue)" />
+    </div>
+    <div class="search-icon-container" ng-click="searchInputVisible = !searchInputVisible">
+        <img src="search.png" height="20px" width="20px" />
+    </div>
+</div>
+<div class="item-container" ng-repeat="item in newsList">
+    <div ng-if="::item.image" class="col-xs-12 pull-left image-container">
+        <img ng-src="{{ ::item.image }}" />
+    </div>
+    <div class="col-xs-12 pull-left text-container">
+        <div class="title">
+            <a ng-bind="::item.title" ng-href="{{ ::item.url }}"></a>
+        </div>
+        <div class="short-info">
+            <p ng-bind-html="::item.infoHtml"></p>
+        </div>
+    </div>
+    <div class="col-xs-12 item-footer">
+        <div class="date-container">
+            <span ng-bind="::item.dateTime"></span>
+        </div>
+        <div class="provider-container">
+            <span ng-bind="::item.provider"></span>
+        </div>
+    </div>
+</div>

@@ -7,6 +7,7 @@
         'app.home',
         'app.newsList',
         'app.techNewsList',
+        'app.programmingNewsList',
         'app.weatherLineChart',
         'app.keywordsBarChart'
     ])
@@ -32,6 +33,11 @@
                 url: '/tech-news-list',
                 controller: 'techNewsListCtrl',
                 templateUrl: 'tech-news-list/tech-news-list.html'
+            })
+            .state('programmingNewsList', {
+                url: '/programming-news-list',
+                controller: 'programmingNewsListCtrl',
+                templateUrl: 'programming-news-list/programming-news-list.html'
             })
             .state('chartsWeatherLine', {
                 url: '/weather-line-chart?city',

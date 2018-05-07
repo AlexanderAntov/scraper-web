@@ -5,7 +5,7 @@
         'ui.router',
         'app.const',
         'app.home',
-        'app.newsList',
+        'app.mainNewsList',
         'app.techNewsList',
         'app.programmingNewsList',
         'app.weatherLineChart',
@@ -26,18 +26,18 @@
             })
             .state('newsList', {
                 url: '/news-list',
-                controller: 'newsListCtrl',
-                templateUrl: 'news-list/news-list.html'
+                controller: 'mainNewsListCtrl',
+                templateUrl: 'news-lists/news-list.html'
             })
             .state('techNewsList', {
                 url: '/tech-news-list',
                 controller: 'techNewsListCtrl',
-                templateUrl: 'tech-news-list/tech-news-list.html'
+                templateUrl: 'news-lists/news-list.html'
             })
             .state('programmingNewsList', {
                 url: '/programming-news-list',
                 controller: 'programmingNewsListCtrl',
-                templateUrl: 'programming-news-list/programming-news-list.html'
+                templateUrl: 'news-lists/news-list.html'
             })
             .state('chartsWeatherLine', {
                 url: '/weather-line-chart?city',

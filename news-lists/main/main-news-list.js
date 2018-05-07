@@ -1,10 +1,10 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('app.newsList', [])
-        .controller('newsListCtrl', NewsListCtrl);
+    angular.module('app.mainNewsList', [])
+        .controller('mainNewsListCtrl', MainNewsListCtrl);
 
-    function NewsListCtrl($http, $scope, $sce, appConst) {
+    function MainNewsListCtrl($http, $scope, $sce, appConst) {
         $scope.onSearchValueChange = onSearchValueChange;
         $scope.summarize = summarize;
         $scope.$watch('searchInputVisible', cleanSearchValue);

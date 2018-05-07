@@ -2,9 +2,9 @@ require('node-minify').minify({
   compressor: 'uglifyjs',
   input: [
       'home/home.js',
-      'news-list/news-list.js',
-      'tech-news-list/tech-news-list.js',
-      'programming-news-list/programming-news-list.js',
+      'news-lists/main/main-news-list.js',
+      'news-lists/tech/tech-news-list.js',
+      'news-lists/programming/programming-news-list.js',
       'weather-line-chart/weather-line-chart.js',
       'keywords-bar-chart/keywords-bar-chart.js',
       'app.const.js',

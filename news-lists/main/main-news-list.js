@@ -10,6 +10,7 @@
         $scope.summarize = summarize;
         $scope.filterTopStories = filterTopStories;
         $scope.readTopStories = readTopStories;
+        $scope.readBriefing = readBriefing;
         newsListsService.init($scope);
 
         $http.get('{0}/news?images="true"'.replace('{0}', appConst.backendUrl)).then(function (response) {
@@ -61,6 +62,36 @@
                     } else {
                         window.utterances = null;
                     }
+                };
+                message.onerror = function (event) {
+                    console.log('An error has occurred with the speech synthesis: ', event.error);
+                };
+
+                window.utterances.push(message);
+                window.speechSynthesis.speak(message);
+            }
+        }
+
+        function readBriefing() {
+            window.utterances = [];
+
+            var messageText = '';
+            $http.get('{0}/weather-raw'.replace('{0}', appConst.backendUrl)).then(function (response) {
+                if (response && response.data) {
+                    createWeatherSummary(response.data)
+                } else {
+                    readTopStories();
+                }
+            });
+
+            function createWeatherSummary(weatherData) {
+                messageText += 'Today\'s forecast is: ' + weatherData.list[0].weather[0].description + '.';
+                messageText += 'The minimum temperature will be: ' + Math.round(weatherData.list[0].temp.min) + ',';
+                messageText += 'and maximum will be: ' + Math.round(weatherData.list[0].temp.max) + '.';
+                messageText += 'Today\'s top news are: ';
+                var message = new SpeechSynthesisUtterance(messageText);
+                message.onend = function () {
+                    $scope.$evalAsync(readTopStories);
                 };
                 message.onerror = function (event) {
                     console.log('An error has occurred with the speech synthesis: ', event.error);

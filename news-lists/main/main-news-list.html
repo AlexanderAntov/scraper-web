@@ -32,3 +32,19 @@
         </div>
     </div>
 </div>
+<div class="commands-palette">
+    <button class="toggle" ng-click="commandsPalette = !commandsPalette">
+        <i class="fa fa-bars"></i>
+    </button>
+    <div ng-if="commandsPalette">
+        <button class="action filter-top-stories" ng-click="filterTopStories()">
+            <i class="fa fa-newspaper-o"></i>
+        </button>
+        <button class="action read-top-stories" ng-click="readTopStories()">
+            <i class="fa fa-volume-up"></i>
+        </button>
+        <button class="action voice-command" ng-click="voiceCommand()">
+            <i class="fa fa-microphone"></i>
+        </button>
+    </div>
+</div>

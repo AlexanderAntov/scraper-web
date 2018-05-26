@@ -8,6 +8,8 @@
 
     function MainNewsListCtrl($http, $scope, $sce, appConst, newsListsService) {
         $scope.summarize = summarize;
+        $scope.filterTopStories = filterTopStories;
+        $scope.readTopStories = readTopStories;
         newsListsService.init($scope);
 
         $http.get('{0}/news?images="true"'.replace('{0}', appConst.backendUrl)).then(function (response) {
@@ -27,6 +29,46 @@
             window.open('{0}/scrape/{1}'
                 .replace('{0}', appConst.backendUrl)
                 .replace('{1}', model.id));
+        }
+
+        function filterTopStories() {
+            var providerMap = {},
+                topStoriesNewsList = [];
+            $scope.newsList.forEach(function (newsModel) {
+                if (!providerMap[newsModel.provider]) {
+                    providerMap[newsModel.provider] = 1;
+                }
+                if (providerMap[newsModel.provider] <= 3 && (newsModel.provider === 4 || newsModel.provider === 6 || newsModel.provider === 7)) {
+                    topStoriesNewsList.push(newsModel);
+                }
+                providerMap[newsModel.provider]++;
+            });
+            $scope.newsList = topStoriesNewsList;
+        }
+
+        function readTopStories() {
+            filterTopStories();
+            readNewsPiece(0);
+
+            function readNewsPiece(index) {
+                window.utterances = [];
+
+                var message = new SpeechSynthesisUtterance($scope.newsList[index].title);
+                message.onend = function () {
+                    index++;
+                    if ($scope.newsList.length > index) {
+                        readNewsPiece(index);
+                    } else {
+                        window.utterances = null;
+                    }
+                };
+                message.onerror = function (event) {
+                    console.log('An error has occurred with the speech synthesis: ', event.error);
+                };
+
+                window.utterances.push(message);
+                window.speechSynthesis.speak(message);
+            }
         }
     }
 })();

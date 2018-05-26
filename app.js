@@ -27,7 +27,7 @@
             .state('newsList', {
                 url: '/news-list',
                 controller: 'mainNewsListCtrl',
-                templateUrl: 'news-lists/news-list.html'
+                templateUrl: 'news-lists/main/main-news-list.html'
             })
             .state('techNewsList', {
                 url: '/tech-news-list',

@@ -43,6 +43,10 @@ body {
                 float: right;
                 cursor: pointer;
                 margin-right: 5px;
+
+                i {
+                    font-size: 17px;
+                }
             }
 
             .image-container {
@@ -95,6 +99,56 @@ body {
                         font-size: 12px;
                     }
                 }
+            }
+        }
+
+        .commands-palette {
+            button {
+                position: absolute;
+                border-radius: 50%;
+                text-decoration: none;
+                border: none;
+                color: white;
+                height: 50px;
+                width: 50px;
+
+                i {
+                    font-size: 20px;
+                    margin-top: 5px;
+                }
+            }
+
+            button.toggle {
+                background-color: #d179d0;
+                right: 100px;
+                bottom: 70px;
+
+                i {
+                    color: white;
+                }
+            }
+
+            button.action {
+                background-color: #ffc1fe;
+
+                i {
+                    color: gray;
+                }
+            }
+
+            button.filter-top-stories {
+                right: 80px;
+                bottom: 170px;
+            }
+
+            button.read-top-stories {
+                right: 190px;
+                bottom: 150px;
+            }
+
+            button.voice-command {
+                right: 200px;
+                bottom: 50px;
             }
         }
 
@@ -190,8 +244,9 @@ body {
                 right: 15px;
                 top: 5px;
 
-                img {
-                    cursor: pointer;
+                i {
+                    font-size: 20px;
+                    color: white;
                 }
             }
         }

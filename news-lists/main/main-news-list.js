@@ -2,7 +2,9 @@
     'use strict';
 
     angular.module('app.mainNewsList', [
-        'app.newsListsService'
+        'app.newsListsService',
+        'app.components.tileGrid',
+        'app.components.searchHeader'
     ])
     .controller('mainNewsListCtrl', MainNewsListCtrl);
 
@@ -20,6 +22,7 @@
                         newsModel.info = newsModel.info.replace(/\n/g, '<br/>');
                     }
                     newsModel.infoHtml = $sce.trustAsHtml(newsModel.info);
+                    newsModel.summarizeVisible = newsModel.provider === 4 || newsModel.provider === 6;
                 });
                 $scope.newsList = response.data;
                 $scope.pristineNewsList = response.data;

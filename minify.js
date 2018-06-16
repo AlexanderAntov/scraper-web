@@ -8,6 +8,8 @@ require('node-minify').minify({
       'news-lists/programming/programming-news-list.js',
       'charts/weather/weather-line-chart.js',
       'charts/keywords/keywords-bar-chart.js',
+      'components/tile-grid/tile-grid.js',
+      'components/search-header/search-header.js',
       'app.const.js',
       'app.js'
   ],

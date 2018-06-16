@@ -1,0 +1,8 @@
+<div class="search-header-container">
+    <div ng-if="searchInputVisible" class="search-input-container">
+        <input type="text" ng-model="searchValue" ng-change="searchHeader.onSearch(searchValue)" />
+    </div>
+    <div class="search-icon-container" ng-click="searchInputVisible = !searchInputVisible">
+        <i class="fa fa-search"></i>
+    </div>
+</div>

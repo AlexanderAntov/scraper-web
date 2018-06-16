@@ -2,7 +2,9 @@
     'use strict';
 
     angular.module('app.techNewsList', [
-        'app.newsListsService'
+        'app.newsListsService',
+        'app.components.tileGrid',
+        'app.components.searchHeader'
     ])
     .controller('techNewsListCtrl', TechNewsListCtrl);
 

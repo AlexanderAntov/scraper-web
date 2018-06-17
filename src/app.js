@@ -11,7 +11,10 @@
         'app.weatherLineChart',
         'app.keywordsBarChart'
     ])
-    .config(function ($qProvider, $stateProvider) {
+    .config(AppConfig)
+    .controller('appCtrl', AppCtrl);
+
+    function AppConfig($qProvider, $stateProvider) {
         $qProvider.errorOnUnhandledRejections(false);
         $stateProvider
             .state('app', {
@@ -49,8 +52,7 @@
                 controller: 'keywordsBarChartCtrl',
                 templateUrl: 'charts/keywords/keywords-bar-chart.html'
             });
-    })
-    .controller('appCtrl', AppCtrl);
+    }
 
     function AppCtrl($state) {
         var that = this;

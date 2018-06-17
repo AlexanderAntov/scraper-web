@@ -1,7 +1,8 @@
 {
   "name": "scraper-web",
   "scripts": {
-    "start": "node minify.js && lessc --clean-css styles.less styles.min.css && node server.js"
+    "styles": "lessc --clean-css styles.less styles.min.css",
+    "start": "minify src -d dist --mangle false && node concat.js && npm run styles && node server.js"
   },
   "main": "server.js",
   "engines": {
@@ -15,7 +16,9 @@
     "express": "4.14.0",
     "less": "2.7.2",
     "less-plugin-clean-css": "1.5.1",
-    "node-minify": "2.3.0",
     "font-awesome": "4.7.0"
+  },
+  "devDependencies": {
+    "babel-minify": "^0.4.3"
   }
 }

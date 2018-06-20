@@ -2,7 +2,9 @@
   "name": "scraper-web",
   "scripts": {
     "styles": "lessc --clean-css styles.less styles.min.css",
-    "start": "minify src -d dist --mangle false && node concat.js && npm run styles && node server.js"
+    "prod": "minify src -d dist --mangle false && node concat.js ./dist/",
+    "dev": "node concat.js ./src/",
+    "start": "npm run dev && npm run styles && node server.js"
   },
   "main": "server.js",
   "engines": {
@@ -13,12 +15,12 @@
     "angular-ui-router": "0.4.3",
     "bootstrap": "3.3.7",
     "highcharts": "5.0.7",
-    "express": "4.14.0",
     "less": "2.7.2",
     "less-plugin-clean-css": "1.5.1",
     "font-awesome": "4.7.0"
   },
   "devDependencies": {
-    "babel-minify": "^0.4.3"
+    "babel-minify": "^0.5.0-alpha.a24dd066",
+    "express": "4.14.0"
   }
 }

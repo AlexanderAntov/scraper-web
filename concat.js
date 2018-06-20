@@ -13,12 +13,12 @@ const readdirRecursive = (dir) => {
         }
     });
     return results;
-}
+};
 
-const output = readdirRecursive('./dist/').map((file) => {
-    if (fs.existsSync(file)) {
+const output = readdirRecursive(process.argv[2]).map((file) => {
+    if (fs.existsSync(file) && file.endsWith('.js')) {
         return fs.readFileSync(file).toString();
     }
 }).join(';');
 
-fs.writeFileSync('dist/index.min.js', output)
+fs.writeFileSync('index.min.js', output);

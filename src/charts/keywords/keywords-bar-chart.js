@@ -1,13 +1,13 @@
-﻿(function () {
-    'use strict';
+﻿class KeywordsBarChartCtrl {
+    constructor($http, appConst) {
+        this.$http = $http;
+        this.appConst = appConst;
+    }
 
-    angular.module('app.keywordsBarChart', [])
-        .controller('keywordsBarChartCtrl', KeywordsBarChartCtrl);
-
-    function KeywordsBarChartCtrl($http, appConst) {
-        $http.get('{0}/news-keywords'.replace('{0}', appConst.backendUrl)).then(function (response) {
-            var keywordData = [];
-            response.data.slice(0, 50).forEach(function (model) {
+    $onInit() {
+        this.$http.get('{0}/news-keywords'.replace('{0}', this.appConst.backendUrl)).then((response) => {
+            const keywordData = [];
+            response.data.slice(0, 50).forEach((model) => {
                 keywordData.push([model.word, model.score]);
             });
 
@@ -58,4 +58,7 @@
             });
         });
     }
-})();
+}
+
+angular.module('app.keywordsBarChart', [])
+.controller('keywordsBarChartCtrl', KeywordsBarChartCtrl);

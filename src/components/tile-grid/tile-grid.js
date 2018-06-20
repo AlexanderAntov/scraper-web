@@ -2,28 +2,15 @@
     'use strict';
 
     angular.module('app.components.tileGrid', []).component('tileGrid', {
-        templateUrl: 'components/tile-grid/tile-grid.html',
+        templateUrl: 'src/components/tile-grid/tile-grid.html',
         bindings: {
             itemsList: '<?',
             summarize: '<?'
         },
-        controller: function () {
-            this.$onChanges = function (changes) {
-                if (changes && changes.itemsList) {
-                    var itemWidth = getItemWidth() + 'px',
-                        tilesList = document.getElementsByClassName('item-container'),
-                        tilesListLength = tilesList.length,
-                        iter;
-
-                    for (iter = 0; iter < tilesListLength; iter++) {
-                        tilesList[iter].style.width = itemWidth;
-                    }
-                }
-            };
-
-            function getItemWidth() {
-                var columnCount = 1,
-                    pixels = window.innerWidth;
+        controller: function TileGridCtrl() {
+            const getItemWidth = () => {
+                const pixels = window.innerWidth;
+                let columnCount = 1;
 
                 if (pixels > 1750) {
                     columnCount = 4;
@@ -34,7 +21,20 @@
                 }
 
                 return (window.innerWidth - (columnCount + 2) * 20) / columnCount;
-            }
+            };
+
+            this.$onChanges = (changes) => {
+                if (changes && changes.itemsList) {
+                    const itemWidth = getItemWidth() + 'px',
+                        tilesList = document.getElementsByClassName('item-container'),
+                        tilesListLength = tilesList.length;
+                    let iter;
+
+                    for (iter = 0; iter < tilesListLength; iter++) {
+                        tilesList[iter].style.width = itemWidth;
+                    }
+                }
+            };
         },
         controllerAs: 'tileGrid'
     });

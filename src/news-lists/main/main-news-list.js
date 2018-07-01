@@ -13,7 +13,7 @@
         this.$scope.readBriefing = () => this.readBriefing();
         NewsListsService.init(this.$scope);
 
-        this.$http.get('{0}/news?images="true"'.replace('{0}', this.appConst.backendUrl)).then((response) => {
+        this.$http.get(`${this.appConst.backendUrl}/news?images=true`).then((response) => {
             if (response && response.data && response.data.length > 0) {
                 response.data.forEach((newsModel, index) => {
                     if (index === 0 || index === 1) {
@@ -29,9 +29,7 @@
     }
 
     summarize(model) {
-        window.open('{0}/scrape/{1}'
-            .replace('{0}', this.appConst.backendUrl)
-            .replace('{1}', model.id));
+        window.open(`${this.appConst.backendUrl}/scrape/${model.id}`);
     }
 
     filterTopStories() {
@@ -78,12 +76,12 @@
 
     readBriefing() {
         const createWeatherSummary = (weatherData) => {
-            messageText += 'Today\'s forecast is: ' + weatherData.list[0].weather[0].description + '.';
-            messageText += 'The minimum temperature will be: ' + Math.round(weatherData.list[0].temp.min) + ',';
-            messageText += 'and maximum will be: ' + Math.round(weatherData.list[0].temp.max) + '.';
-            messageText += 'Today\'s top news are: ';
-
+            const messageText = `Today's forecast is: ${weatherData.list[0].weather[0].description}.
+            The minimum temperature will be: ${Math.round(weatherData.list[0].temp.min)}, 
+            and maximum will be: ${Math.round(weatherData.list[0].temp.max)}.
+            Today's top news are:`;
             const message = new SpeechSynthesisUtterance(messageText);
+
             message.onend = () => {
                 this.$scope.$evalAsync(() => this.readTopStories());
             };
@@ -97,8 +95,7 @@
 
         window.utterances = [];
 
-        let messageText = '';
-        this.$http.get('{0}/weather-raw'.replace('{0}', this.appConst.backendUrl)).then((response) => {
+        this.$http.get(`${this.appConst.backendUrl}/weather-raw`).then((response) => {
             if (response && response.data) {
                 createWeatherSummary(response.data)
             } else {

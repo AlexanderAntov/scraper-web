@@ -1,6 +1,6 @@
 ﻿class TechNewsListCtrl extends BaseNewsController {
     constructor($http, $scope, $sce, appConst) {
-        super($http, $scope, $sce, appConst, '{0}/tech-and-science?images="true"');
+        super($http, $scope, $sce, `${appConst.backendUrl}/tech-and-science?images=true`);
     }
 }
 

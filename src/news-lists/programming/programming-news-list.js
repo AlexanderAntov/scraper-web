@@ -1,6 +1,6 @@
 ﻿class ProgrammingNewsListCtrl extends BaseNewsController {
     constructor($http, $scope, $sce, appConst) {
-        super($http, $scope, $sce, appConst, '{0}/programming?images="true"');
+        super($http, $scope, $sce, `${appConst.backendUrl}/programming?images=true`);
     }
 }
 

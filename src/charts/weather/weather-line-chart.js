@@ -14,12 +14,12 @@
         let apiUrl;
 
         if (this.$stateParams.city) {
-            apiUrl = '{0}/weather-raw?city=' + this.$stateParams.city;
+            apiUrl = `${this.appConst.backendUrl}/weather-raw?city=${this.$stateParams.city}`;
         } else {
-            apiUrl = '{0}/weather-raw';
+            apiUrl = `${this.appConst.backendUrl}/weather-raw`;
         }
 
-        this.$http.get(apiUrl.replace('{0}', this.appConst.backendUrl)).then((response) => {
+        this.$http.get(apiUrl).then((response) => {
             const currentDate = new Date();
             response.data.list.slice(0, -1).forEach((weatherDataItem) => {
                 this.datesList.push(currentDate.toDateString().slice(0, -5));

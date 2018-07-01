@@ -153,50 +153,32 @@ body {
         .home-container {
             margin-top: -9px;
 
-            .navigation-row {
+            .content-strip {
+                margin-bottom: 20px;
+            }
+
+            .navigation-tile {
                 height: 100px;
-                border-bottom: 1px solid white;
-                padding-left: 25px;
-                -webkit-transition: width 0.5s, opacity 0.5s;
-                -moz-transition: width 0.5s, opacity 0.5s;
-                transition: width 0.5s, opacity 0.5s;
-                width: 105%;
-                opacity: 1;
+                width: 200px;
+                float: left;
+                margin: 10px 5px 10px 5px;
+                background-color: white;
+                box-shadow: 1px 1px 5px #999999;
 
                 &:hover {
-                    width: 90%;
                     opacity: 0.7;
                 }
 
                 .navigation-item {
-                    color: white;
-                    font-size: 30px;
+                    color: #888888;
+                    font-size: 20px;
                     font-weight: bold;
                     height: 100%;
-                    width: 30%;
-                    background-color: inherit;
+                    width: 100%;
                     cursor: pointer;
+                    margin-top: 5px;
+                    margin-left: 5px;
                 }
-            }
-
-            .navigation-row.news-list {
-                background-color: #B89C91;
-            }
-
-            .navigation-row.tech-news-list {
-                background-color: #b8fdb8;
-            }
-
-            .navigation-row.programming-news-list {
-                background-color: #e991ff;
-            }
-
-            .navigation-row.weather-charts {
-                background-color: #067E8D;
-            }
-
-            .navigation-row.keywords-charts {
-                background-color: #FADA5E;
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿class MainNewsListCtrl {
-    constructor($http, $scope, $sce, appConst) {
+    constructor($http, $state, $scope, $sce, appConst) {
         this.$http = $http;
+        this.$state = $state;
         this.$scope = $scope;
         this.$sce = $sce;
         this.appConst = appConst;
@@ -29,7 +30,7 @@
     }
 
     summarize(model) {
-        window.open(`${this.appConst.backendUrl}/scrape/${model.id}`);
+        this.$state.go('summarizeNews', { id: model.id });
     }
 
     filterTopStories() {

@@ -27,6 +27,14 @@
                 controller: 'programmingNewsListCtrl',
                 templateUrl: 'src/news-lists/news-list.html'
             })
+            .state('summarizeNews', {
+                url: '/summarize-news/:id',
+                controller: 'summarizeNewsCtrl',
+                templateUrl: 'src/news-lists/summarize-news/summarize-news.html',
+                params: {
+                    id: null
+                }
+            })
             .state('chartsWeatherLine', {
                 url: '/weather-line-chart?city',
                 controller: 'weatherLineChartCtrl',
@@ -54,6 +62,7 @@ angular.module('app', [
     'app.mainNewsList',
     'app.techNewsList',
     'app.programmingNewsList',
+    'app.summarizeNews',
     'app.weatherLineChart',
     'app.keywordsBarChart'
 ])

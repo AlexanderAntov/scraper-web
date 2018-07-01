@@ -1,0 +1,13 @@
+
+<div ng-if="summaryVisible" class="col-xs-12">
+    <span ng-bind="::summary"></span>
+    <br/><br/>
+    <button ng-click="toggleSummary()">Read full text</button>
+    <br/><br/>
+    <strong>Text was reduced to {{::percentOfOriginalText}}% from its original</strong>
+</div>
+<div ng-if="!summaryVisible" class="col-xs-12">
+    <span ng-bind="::fullText"></span>
+    <br/><br/>
+    <button ng-click="toggleSummary()">Read summary</button>
+</div>
